@@ -1,0 +1,3 @@
+logging:
+  level:
+    com.metrics_streamer.telemetry_producer: DEBUG

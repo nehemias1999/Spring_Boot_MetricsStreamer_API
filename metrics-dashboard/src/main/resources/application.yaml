@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: metrics-dashboard
+  profiles:
+    active: dev
+
+server:
+  port: 8081
+
+telemetry:
+  producer:
+    base-url: http://localhost:8080
+
+dashboard:
+  alerts:
+    cpu-threshold: 80.0
+    ram-threshold: 85.0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, loggers
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
+  tracing:
+    sampling:
+      probability: 1.0
+
+info:
+  app:
+    name: ${spring.application.name}
+    version: 0.0.1-SNAPSHOT
+    description: "Reactive metrics dashboard — filters and re-exposes high-usage alerts via SSE"

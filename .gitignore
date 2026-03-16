@@ -1,0 +1,10 @@
+# Claude Code
+CLAUDE.md
+.claude/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Misc
+*.pdf

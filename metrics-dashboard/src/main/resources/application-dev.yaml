@@ -1,0 +1,3 @@
+logging:
+  level:
+    com.metrics_streamer.metrics_dashboard: DEBUG

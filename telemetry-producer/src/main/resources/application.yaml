@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: telemetry-producer
+  profiles:
+    active: dev
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, loggers
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
+  tracing:
+    sampling:
+      probability: 1.0
+
+info:
+  app:
+    name: ${spring.application.name}
+    version: 0.0.1-SNAPSHOT
+    description: "Reactive telemetry producer — streams simulated server metrics via SSE"
